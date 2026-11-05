@@ -31,14 +31,13 @@ a { color: var(--acento); }
 main.contenedor { padding-top: 48px; padding-bottom: 48px; }
 
 /* Portada */
-.perfil { margin-bottom: 48px; }
-.perfil h1 { margin: 0 0 4px; font-size: 2rem; line-height: 1.2; }
-.perfil-puesto { margin: 0 0 12px; color: var(--suave); }
-.perfil-bio { margin: 0 0 12px; max-width: 65ch; }
-.contacto { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 20px; }
-.seccion { font-size: 1.25rem; border-bottom: 1px solid var(--borde); padding-bottom: 8px; margin-bottom: 24px; }
+.cabecera { margin-bottom: 32px; }
+.cabecera h1 { margin: 0 0 8px; font-size: 2rem; line-height: 1.2; }
+.cabecera p { margin: 0; color: var(--suave); }
+.perfil { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--borde); color: var(--suave); font-size: .85rem; max-width: 70ch; }
+.perfil p { margin: 0 0 6px; }
 
-.rejilla { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.rejilla { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .tarjeta {
   display: flex;
   flex-direction: column;
@@ -54,12 +53,12 @@ main.contenedor { padding-top: 48px; padding-bottom: 48px; }
 .tarjeta:hover, .tarjeta:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0, 0, 0, .12); }
 .tarjeta-imagen { aspect-ratio: 4 / 5; background: var(--borde); }
 .tarjeta-imagen img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-.tarjeta-texto { padding: 18px 20px 20px; }
-.tarjeta-texto h3 { margin: 0 0 8px; font-size: 1.1rem; line-height: 1.35; }
-.tarjeta-fecha { margin: 0 0 4px; color: var(--acento); font-size: .9rem; font-weight: 600; }
-.tarjeta-autores { margin: 0; color: var(--suave); font-size: .9rem; }
+.tarjeta-texto { padding: 12px 14px 14px; }
+.tarjeta-texto h3 { margin: 0 0 6px; font-size: .95rem; line-height: 1.3; }
+.tarjeta-fecha { margin: 0 0 4px; color: var(--acento); font-size: .8rem; font-weight: 600; }
+.tarjeta-autores { margin: 0; color: var(--suave); font-size: .8rem; }
 
-/* Página de cada póster */
+/* Página de cada entrada */
 .volver { margin: 0 0 24px; }
 .volver a { text-decoration: none; }
 .poster h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 12px; }
@@ -90,9 +89,12 @@ button:hover { background: var(--acento); color: var(--superficie); }
 .bibliografia ul { list-style: none; padding: 0; margin: 0; }
 .bibliografia li { padding-left: 2em; text-indent: -2em; margin-bottom: 12px; overflow-wrap: anywhere; }
 
-.pie { border-top: 1px solid var(--borde); padding-top: 20px; padding-bottom: 40px; color: var(--suave); font-size: .9rem; }
-
-@media (max-width: 700px) {
-  .rejilla { grid-template-columns: 1fr; }
+@media (max-width: 900px) {
+  .rejilla { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .rejilla { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .tarjeta-texto { padding: 10px; }
+  .tarjeta-texto h3 { font-size: .85rem; }
   main.contenedor { padding-top: 32px; }
 }

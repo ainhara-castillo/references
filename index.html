@@ -1,24 +1,16 @@
 ---
 layout: default
 ---
-{%- assign p = site.data.perfil -%}
-<header class="perfil">
-  <h1>{{ p.nombre }}</h1>
-  <p class="perfil-puesto">{{ p.puesto }} · {{ p.institucion }}</p>
-  <p class="perfil-bio">{{ p.bio }}</p>
-  <ul class="contacto">
-    <li><a href="mailto:{{ p.email }}">{{ p.email }}</a></li>
-    <li><a href="https://github.com/{{ p.github }}">GitHub</a></li>
-  </ul>
+<header class="cabecera">
+  <h1>Referencias</h1>
 </header>
 
-<h2 class="seccion">Pósters</h2>
 <div class="rejilla">
   {%- assign posters = site.posters | sort: "fecha" | reverse -%}
   {%- for poster in posters %}
   <a class="tarjeta" href="{{ poster.url | relative_url }}">
     <div class="tarjeta-imagen">
-      <img src="{{ poster.imagen | relative_url }}" alt="Miniatura del póster" loading="lazy">
+      <img src="{{ poster.imagen | relative_url }}" alt="Miniatura" loading="lazy">
     </div>
     <div class="tarjeta-texto">
       <h3>{% include titulo.html texto=poster.title %}</h3>
@@ -28,3 +20,8 @@ layout: default
   </a>
   {%- endfor %}
 </div>
+
+{%- assign p = site.data.perfil %}
+<footer class="perfil">
+  <p><strong>{{ p.nombre }}</strong> · {{ p.puesto }} · <a href="mailto:{{ p.email }}">{{ p.email }}</a></p>
+</footer>
