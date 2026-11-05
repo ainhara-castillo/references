@@ -34,7 +34,7 @@ main.contenedor { padding-top: 48px; padding-bottom: 48px; }
 .cabecera { margin-bottom: 32px; }
 .cabecera h1 { margin: 0 0 8px; font-size: 2rem; line-height: 1.2; }
 .cabecera p { margin: 0; color: var(--suave); }
-.perfil { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--borde); color: var(--suave); font-size: .85rem; max-width: 70ch; }
+.perfil { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--borde); color: var(--suave); font-size: .85rem; }
 .perfil p { margin: 0 0 6px; }
 
 .rejilla { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
