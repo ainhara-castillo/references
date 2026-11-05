@@ -1,0 +1,2 @@
+{%- comment -%} Convierto el Markdown del título (cursivas) sin que quede envuelto en un párrafo. {%- endcomment -%}
+{{- include.texto | markdownify | remove: '<p>' | remove: '</p>' | strip -}}

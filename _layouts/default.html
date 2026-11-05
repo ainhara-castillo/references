@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | markdownify | strip_html | strip }}{% else %}{{ site.data.perfil.nombre }}{% endif %} · {{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <main class="contenedor">
+    {{ content }}
+  </main>
+  <footer class="pie contenedor">
+    <a href="{{ '/' | relative_url }}">{{ site.data.perfil.nombre }}</a> · <a href="mailto:{{ site.data.perfil.email }}">{{ site.data.perfil.email }}</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+{%- comment -%} Autores separados por comas y con "&" antes del último, como en APA. {%- endcomment -%}
+{%- for a in include.autores -%}
+{%- if forloop.last and forloop.length > 1 %}, & {% elsif forloop.first == false %}, {% endif -%}{{ a }}
+{%- endfor -%}

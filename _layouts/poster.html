@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<p class="volver"><a href="{{ '/' | relative_url }}">← Todos los pósters</a></p>
+
+<article class="poster">
+  <h1>{% include titulo.html texto=page.title %}</h1>
+  <p class="poster-meta">{{ page.autores | join: ", " }}<br>
+    {{ page.evento }}, {{ page.lugar }} · {% include fecha.html fecha=page.fecha %}</p>
+
+  <section class="cita">
+    <h2>Cómo citar este póster</h2>
+    <p id="cita">{% include autores_cita.html autores=page.autores %} ({{ page.fecha | date: "%Y" }}, {{ page.fecha | date: "%-d" }} de {% include mes.html fecha=page.fecha %}). {% include titulo.html texto=page.title %} [Presentación de póster]. {{ page.evento }}, {{ page.lugar }}.</p>
+    <button type="button" id="copiar">Copiar cita</button>
+  </section>
+
+  <section class="bibliografia">
+    <h2>Referencias</h2>
+    {{ content }}
+  </section>
+</article>
+
+<script>
+  document.getElementById("copiar").addEventListener("click", function () {
+    var boton = this;
+    navigator.clipboard.writeText(document.getElementById("cita").innerText).then(function () {
+      boton.textContent = "¡Copiada!";
+      setTimeout(function () { boton.textContent = "Copiar cita"; }, 2000);
+    });
+  });
+</script>

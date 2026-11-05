@@ -1,0 +1,24 @@
+title: "Pósters"
+description: "Referencias de mis pósters científicos"
+lang: es
+url: "https://ainhara-castillo.github.io"
+baseurl: "/references"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Cada póster es un .md en _posters/ y su página se publica en /references/<nombre-del-archivo>/
+collections:
+  posters:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      type: posters
+    values:
+      layout: poster
+
+exclude:
+  - README.md
